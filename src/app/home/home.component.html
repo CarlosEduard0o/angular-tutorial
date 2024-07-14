@@ -1,0 +1,29 @@
+<section>
+    <form>
+        <input type="text" placeholder="Filter by city" #filter/>
+        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+    </form>
+</section>
+<section class="results">
+    <!-- housingLocation tem um @input(), por isto estou 
+     chamando ele assim dentro da tag app-housing-location-->
+
+    <!-- Ao adicionar uma associação de propriedade a uma tag de componente, 
+    usamos a [attribute] = "value"sintaxe para notificar o Angular de que 
+    o valor atribuído deve ser tratado como uma propriedade da classe de 
+    componente e não como um valor de string.
+    O valor no lado direito é o nome da propriedade do HomeComponent. -->
+
+
+    <!-- Você pode utilizar ngForpara iterar sobre arrays e até mesmo 
+    valores assíncronos. Nesta lição, você adicionará um novo 
+    array de dados para iterar. -->
+
+    <!-- https://angular.dev/guide/directives#ngFor -->
+     <!-- https://angular.dev/guide/directives -->
+
+    <app-housing-location
+        *ngFor="let housingLocation of filteredLocationList"
+        [housingLocation]="housingLocation"
+      ></app-housing-location>
+</section>
